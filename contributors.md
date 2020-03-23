@@ -1,6 +1,6 @@
 # Mentors
 - Amanda Kaufman
-- Barton Mathis
+- [Barton Mathis](https://github.com/rbmathis)
 - Ethan Irons
 - Henry Webb
 - [Kevin Neely](https://github.com/kneely/)
