@@ -10,3 +10,4 @@
 
 # Students
 - [William Parker](https://github.com/parkerws)
+- [Collin Handel](https://github.com/collinhandel)
