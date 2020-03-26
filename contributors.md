@@ -10,3 +10,4 @@
 
 # Students
 - [William Parker](https://github.com/parkerws)
+- [Harley Dickson](https://github.com/thenowherenlboy)
