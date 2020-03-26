@@ -10,3 +10,4 @@
 
 # Students
 - [William Parker](https://github.com/parkerws)
+- [Lucas Smith](https://github.com/lucaslsmith)
