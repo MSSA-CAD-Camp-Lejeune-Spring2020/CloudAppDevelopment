@@ -10,4 +10,4 @@
 
 # Students
 - [William Parker](https://github.com/parkerws)
-- [Anthony Logan](https://github.com/marine0408)
+- [Noe Rivera Jr.](https://github.com/NoeRiveraJr)
