@@ -10,3 +10,4 @@
 
 # Students
 - [William Parker](https://github.com/parkerws)
+- [Steven Bainter](https://github.com/bainter92x)
