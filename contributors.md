@@ -10,6 +10,7 @@
 
 # Students
 - [William Parker](https://github.com/parkerws)
+- [Ben Letbetter](https://github.com/blletbetter)
 - [Collin Handel](https://github.com/collinhandel)
 - [Steven Bainter](https://github.com/bainter92x)
 - [Francisco Santillana](https://github.com/FranciscoSantillana)
