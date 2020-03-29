@@ -10,6 +10,7 @@
 
 # Students
 - [William Parker](https://github.com/parkerws)
+- [Noe Rivera Jr.](https://github.com/NoeRiveraJr)
 - [Lucas Smith](https://github.com/lucaslsmith)
 - [Harley Dickson](https://github.com/thenowherenlboy)
 - [Ben Letbetter](https://github.com/blletbetter)
