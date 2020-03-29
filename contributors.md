@@ -10,4 +10,13 @@
 
 # Students
 - [William Parker](https://github.com/parkerws)
-- Diego Marquez
+- [Diego Marquez](https://github.com/diegomarquez-real)
+- [Noe Rivera Jr.](https://github.com/NoeRiveraJr)
+- [Lucas Smith](https://github.com/lucaslsmith)
+- [Harley Dickson](https://github.com/thenowherenlboy)
+- [Ben Letbetter](https://github.com/blletbetter)
+- [Collin Handel](https://github.com/collinhandel)
+- [Steven Bainter](https://github.com/bainter92x)
+- [Francisco Santillana](https://github.com/FranciscoSantillana)
+- [Chaze Stoner](https://github.com/chaze-stoner)
+- [Anthony Logan](https://github.com/marine0408)
