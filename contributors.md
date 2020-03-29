@@ -11,3 +11,5 @@
 # Students
 - [William Parker](https://github.com/parkerws)
 - [Francisco Santillana](https://github.com/FranciscoSantillana)
+- [Chaze Stoner](https://github.com/chaze-stoner)
+- [Anthony Logan](https://github.com/marine0408)
