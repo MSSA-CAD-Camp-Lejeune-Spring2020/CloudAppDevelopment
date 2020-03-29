@@ -10,6 +10,7 @@
 
 # Students
 - [William Parker](https://github.com/parkerws)
+- [Lucas Smith](https://github.com/lucaslsmith)
 - [Harley Dickson](https://github.com/thenowherenlboy)
 - [Ben Letbetter](https://github.com/blletbetter)
 - [Collin Handel](https://github.com/collinhandel)
