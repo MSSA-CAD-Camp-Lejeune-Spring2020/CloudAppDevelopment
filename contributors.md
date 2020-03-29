@@ -11,3 +11,7 @@
 # Students
 - [William Parker](https://github.com/parkerws)
 - [Collin Handel](https://github.com/collinhandel)
+- [Steven Bainter](https://github.com/bainter92x)
+- [Francisco Santillana](https://github.com/FranciscoSantillana)
+- [Chaze Stoner](https://github.com/chaze-stoner)
+- [Anthony Logan](https://github.com/marine0408)
