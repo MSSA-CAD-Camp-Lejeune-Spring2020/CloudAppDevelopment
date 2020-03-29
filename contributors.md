@@ -10,6 +10,7 @@
 
 # Students
 - [William Parker](https://github.com/parkerws)
+- [Diego Marquez](https://github.com/diegomarquez-real)
 - [Noe Rivera Jr.](https://github.com/NoeRiveraJr)
 - [Lucas Smith](https://github.com/lucaslsmith)
 - [Harley Dickson](https://github.com/thenowherenlboy)
