@@ -27,8 +27,8 @@ resource "azurerm_resource_group" "webapp" {
 # Create app service plan
 resource "azurerm_app_service_plan" "webapp" {
     name = "${var.prefix}-asp"
-    location = "azurerm_resource_group.webapp.location"
-    resource_group_name = "azurerm_resource_group.webapp.name"
+    location = "${azurerm_resource_group.webapp.location}"
+    resource_group_name = "${azurerm_resource_group.webapp.name}"
     kind = "${var.kind}"
     reserved = "${var.reserved}"
     sku {
@@ -40,7 +40,7 @@ resource "azurerm_app_service_plan" "webapp" {
 # Create app service web app
 resource "azurerm_app_service" "webapp" {
     name = "${var.prefix}-app"
-    location = "azurerm_resource_group.webapp.location"
-    resource_group_name = "azurerm_resource_group.webapp.name"
-    app_service_plan_id = "azurerm_app_service_plan.webapp.id"
+    location = "${azurerm_resource_group.webapp.location}"
+    resource_group_name = "${azurerm_resource_group.webapp.name}"
+    app_service_plan_id = "${azurerm_app_service_plan.webapp.id}"
 }
