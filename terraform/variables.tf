@@ -1,38 +1,38 @@
 variable "prefix" {
-    type = "string"
+    type = string
     default = "lejeune"
 }
 
 variable "subscription_id" {
-    type = "string"
+    type = string
 }
 
 variable "location" {
-    type = "string"
+    type = string
     default = "Central US"
 }
 
 variable "environment" {
-    type = "string"
+    type = string
     default = "Production"
 }
 
 variable "kind" {
-    type = "string"
+    type = string
     default = "Linux"
 }
 
 variable "sku_tier" {
-    type = "string"
+    type = string
     default = "Basic"
 }
 
 variable "sku_size" {
-    type = "string"
+    type = string
     default = "B1"
 }
 
 variable "reserved" {
-    type = "bool"
+    type = bool
     default = true
 }
