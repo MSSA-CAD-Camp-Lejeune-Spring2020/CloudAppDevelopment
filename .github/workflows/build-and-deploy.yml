@@ -95,6 +95,7 @@ jobs:
          tf_actions_subcommand: 'plan'
          tf_actions_working_dir: './terraform'
          tf_actions_comment: false
+         args: '-out=plan.tfplan'
       env:
        TF_VAR_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
        TF_VAR_backend_key: ${{ secrets.backend_key }}
@@ -103,21 +104,21 @@ jobs:
        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
 
-    # - name: 'Terraform Apply'
-    #   uses: hashicorp/terraform-github-actions@master
-    #   with:
-    #      tf_actions_version: 0.12.13
-    #      tf_actions_subcommand: 'apply'
-    #      tf_actions_working_dir: '.'
-    #      tf_actions_comment: false
-    #      args: '-var-file="terraform/variables.tfvars"'
-    #   env:
-    #    TF_VAR_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-    #    TF_VAR_backend_key: ${{ secrets.backend_key }}
-    #    ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-    #    ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-    #    ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-    #    ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+    - name: 'Terraform Apply'
+      uses: hashicorp/terraform-github-actions@master
+      with:
+         tf_actions_version: 0.12.13
+         tf_actions_subcommand: 'apply'
+         tf_actions_working_dir: '.'
+         tf_actions_comment: false
+         args: 'plan.tfplan'
+      env:
+       TF_VAR_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+       TF_VAR_backend_key: ${{ secrets.backend_key }}
+       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+       ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
 
   deploy:
     name: Deploy Web App
