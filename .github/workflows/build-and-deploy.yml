@@ -64,7 +64,7 @@ jobs:
          tf_actions_subcommand: 'init'
          tf_actions_working_dir: './terraform'
          tf_actions_comment: false
-         args: '-backend-config="key=${{ secrets.backend_key }}" -var-file="./terraform/variables.tfvars"'
+         args: '-backend-config="key=${{ secrets.backend_key }}"'
       env:
        TF_VAR_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
        TF_VAR_backend_key: ${{ secrets.backend_key }}
@@ -95,7 +95,7 @@ jobs:
          tf_actions_subcommand: 'plan'
          tf_actions_working_dir: './terraform'
          tf_actions_comment: false
-         args: '-backend-config="key=${{ secrets.backend_key }}" -var-file="./terraform/variables.tfvars"'
+         args: '-var-file="variables.tfvars"'
       env:
        TF_VAR_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
        TF_VAR_backend_key: ${{ secrets.backend_key }}
