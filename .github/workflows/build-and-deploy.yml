@@ -62,7 +62,7 @@ jobs:
       with:
          tf_actions_version: 0.12.13
          tf_actions_subcommand: 'init'
-         tf_actions_working_dir: '.'
+         tf_actions_working_dir: './terraform'
          tf_actions_comment: false
          args: '-var-file="terraform/variables.tfvars"'
       env:
@@ -78,7 +78,7 @@ jobs:
       with:
          tf_actions_version: 0.12.13
          tf_actions_subcommand: 'plan'
-         tf_actions_working_dir: '.'
+         tf_actions_working_dir: './terraform'
          tf_actions_comment: false
          args: '-var-file="terraform/variables.tfvars"'
       env:
@@ -108,6 +108,7 @@ jobs:
   deploy:
     name: Deploy Web App
     runs-on: ubuntu-latest
+    needs: [build, create]
     steps:
     - uses: actions/checkout@v2
     
