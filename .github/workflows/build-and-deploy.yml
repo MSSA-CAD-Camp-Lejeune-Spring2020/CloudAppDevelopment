@@ -64,7 +64,22 @@ jobs:
          tf_actions_subcommand: 'init'
          tf_actions_working_dir: './terraform'
          tf_actions_comment: false
-         args: '-backend-config="key=${{ secrets.backend_key }}" -var-file="terraform/variables.tfvars"'
+         args: '-backend-config="key=${{ secrets.backend_key }}" -var-file="./terraform/variables.tfvars"'
+      env:
+       TF_VAR_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+       TF_VAR_backend_key: ${{ secrets.backend_key }}
+       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+       ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+    - name: 'Terraform Validate'
+      uses: hashicorp/terraform-github-actions@master
+      with:
+         tf_actions_version: 0.12.13
+         tf_actions_subcommand: 'validate'
+         tf_actions_working_dir: './terraform'
+         tf_actions_comment: false
       env:
        TF_VAR_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
        TF_VAR_backend_key: ${{ secrets.backend_key }}
@@ -80,7 +95,7 @@ jobs:
          tf_actions_subcommand: 'plan'
          tf_actions_working_dir: './terraform'
          tf_actions_comment: false
-         args: '-backend-config="key=${{ secrets.backend_key }}" -var-file="terraform/variables.tfvars"'
+         args: '-backend-config="key=${{ secrets.backend_key }}" -var-file="./terraform/variables.tfvars"'
       env:
        TF_VAR_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
        TF_VAR_backend_key: ${{ secrets.backend_key }}
