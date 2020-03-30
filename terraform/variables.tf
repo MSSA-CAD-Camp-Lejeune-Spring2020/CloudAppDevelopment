@@ -36,22 +36,3 @@ variable "reserved" {
     type = bool
     default = true
 }
-
-variable "backend_key" {
-    type = string
-}
-
-variable "backend_rg" {
-    type = string
-    default = "tfstate-rg"
-}
-
-variable "backend_container_name" {
-    type = string
-    default = "tfstate"
-}
-
-variable "backend_storage_account_name" {
-    type = string
-    default = "tfstate19049"
-}

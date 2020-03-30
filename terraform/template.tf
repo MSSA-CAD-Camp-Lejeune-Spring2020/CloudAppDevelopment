@@ -1,10 +1,9 @@
 terraform {
   # Configure state backend
   backend "azurerm" {
-    resource_group_name   = "${var.backend_rg}"
-    storage_account_name  = "${var.backend_storage_account_name}"
-    container_name        = "${var.backend_container_name}"
-    key                   = "${var.backend_key}"
+    resource_group_name   = "tfstate-rg"
+    storage_account_name  = "tfstate19049"
+    container_name        = "tfstate"
   }
 }
 
