@@ -95,7 +95,6 @@ jobs:
          tf_actions_subcommand: 'plan'
          tf_actions_working_dir: './terraform'
          tf_actions_comment: false
-         args: '-var-file="variables.tf"'
       env:
        TF_VAR_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
        TF_VAR_backend_key: ${{ secrets.backend_key }}
