@@ -1,57 +1,57 @@
 variable "prefix" {
-    type = "string"
+    type = string
     default = "lejeune"
 }
 
 variable "subscription_id" {
-    type = "string"
+    type = string
 }
 
 variable "location" {
-    type = "string"
+    type = string
     default = "Central US"
 }
 
 variable "environment" {
-    type = "string"
+    type = string
     default = "Production"
 }
 
 variable "kind" {
-    type = "string"
+    type = string
     default = "Linux"
 }
 
 variable "sku_tier" {
-    type = "string"
+    type = string
     default = "Basic"
 }
 
 variable "sku_size" {
-    type = "string"
+    type = string
     default = "B1"
 }
 
 variable "reserved" {
-    type = "bool"
+    type = bool
     default = true
 }
 
 variable "backend_key" {
-    type = "string"
+    type = string
 }
 
 variable "backend_rg" {
-    type = "string"
+    type = string
     default = "tfstate-rg"
 }
 
 variable "backend_container_name" {
-    type = "string"
+    type = string
     default = "tfstate"
 }
 
 variable "backend_storage_account_name" {
-    type = "string"
+    type = string
     default = "tfstate19049"
 }
