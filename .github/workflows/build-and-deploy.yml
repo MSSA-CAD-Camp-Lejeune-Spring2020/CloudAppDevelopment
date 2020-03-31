@@ -126,7 +126,7 @@ jobs:
     needs: [build, create]
     steps:
 
-    - name: Download math result for job 1
+    - name: Download Build Artifact
       uses: actions/download-artifact@v1
       with:
         name: ${{ env.AZURE_WEBAPP_NAME }}
@@ -141,7 +141,7 @@ jobs:
       uses: azure/webapps-deploy@v1
       with:
        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-       package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+       package: '/${{ env.AZURE_WEBAPP_NAME }}'
 
     # Logout AZ CLI
     - name: logout
