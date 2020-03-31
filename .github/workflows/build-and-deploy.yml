@@ -140,7 +140,7 @@ jobs:
       uses: azure/webapps-deploy@v1
       with:
        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-       package: '/${{ env.AZURE_WEBAPP_NAME }}'
+       package: ${{ env.AZURE_WEBAPP_NAME }}
 
     # Logout AZ CLI
     - name: logout
