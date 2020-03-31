@@ -2,8 +2,8 @@
 #
 # To configure this workflow:
 #
-# 1. Set up a secret in your repository named AZURE_WEBAPP_PUBLISH_PROFILE with the value of your Azure publish profile.
-#    Get the publish profile from the portal: https://docs.microsoft.com/visualstudio/deployment/tutorial-import-publish-settings-azure?view=vs-2019#create-the-publish-settings-file-in-azure-app-service
+# 1. Set up a secret in your repository named AZURE_DEPLOY_CREDS with a value of the json result of a new service principal, scoped to the given resource group
+# For additional information follow the instructions here https://github.com/Azure/login
 #
 # 2. Change the values for the AZURE_WEBAPP_NAME, AZURE_WEBAPP_PACKAGE_PATH and NETCORE_VERSION environment variables  (below).
 #
@@ -17,7 +17,7 @@ on:
       - master
 
 env:
-  AZURE_WEBAPP_NAME: lejeuneweb  # set this to your application's name
+  AZURE_WEBAPP_NAME: lejeune-app  # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: './published'      # set this to the path to your web app project, defaults to the repository root
   NETCORE_VERSION: '3.1.101'                    # set this to the .NET Core version to use
 
@@ -48,7 +48,7 @@ jobs:
     - name: Publish Artifacts
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: webapp
+        name: ${{ env.AZURE_WEBAPP_NAME }}
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
   create:
@@ -125,12 +125,26 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build, create]
     steps:
-    - uses: actions/checkout@v2
+
+    - name: Download math result for job 1
+      uses: actions/download-artifact@v1
+      with:
+        name: ${{ env.AZURE_WEBAPP_NAME }}
+
+    # Login to AZ CLI
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_DEPLOY_CREDS }}
     
-    #- name: 'Deploy to Azure WebApp'
-    #  uses: azure/webapps-deploy@v1
-    #  with:
-    #    app-name: ${{ env.AZURE_WEBAPP_NAME }}
-    #    publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-    #    package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+    # Deploy app
+    - name: 'Deploy to Azure WebApp'
+      uses: azure/webapps-deploy@v1
+      with:
+       app-name: ${{ env.AZURE_WEBAPP_NAME }}
+       package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
+    # Logout AZ CLI
+    - name: logout
+      run: |
+        az logout
 
